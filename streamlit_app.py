@@ -4,8 +4,10 @@ from langchain.llms import OpenAI
 st.title(':100: Hobby Assistant')
 
 def generate_response(input_text):
-  llm = OpenAI(temperature=0.7, openai_api_key='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')
+  llm = OpenAI(temperature=0.7, openai_api_key=key)
   st.info(llm(input_text))
+
+key = st.text_input('Enter your OpenAI API key:', '')
 
 with st.form('my_form'):
   # subject = st.text_input('Enter the hobby you want to work on', '', placeholder='singing, skiing, coding...')
